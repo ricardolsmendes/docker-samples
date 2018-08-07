@@ -16,7 +16,7 @@ services:
     restart: always
 
   mysql-jobs:
-    build: './custom-images/alpine-with-jobs'
+    build: ./custom-images/alpine-with-jobs
     container_name: my-project_mysql-jobs
     user: root
     environment:
