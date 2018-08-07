@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+
+  mysql:
+    image: mariadb:10.2.16
+    container_name: my-project_mysql
+    environment:
+      MYSQL_DATABASE: my-database
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /opt/mysql/data:/var/lib/mysql
+    restart: always
+
+  mysql-jobs:
+    build: ./custom-images/alpine-with-jobs
+    container_name: my-project_mysql-jobs
+    user: root
+    environment:
+      MYSQL_CONTAINER_NAME: my-project_mysql
+      MYSQL_DATABASE: my-database
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /opt/mysql/backup:/opt/mysql/backup
+    command: crond -f -d 8
+    restart: always
