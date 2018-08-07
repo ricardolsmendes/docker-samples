@@ -12,7 +12,7 @@ services:
       - "3306:3306"
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /my-project/mysql/data:/var/lib/mysql
+      - /opt/mysql/data:/var/lib/mysql
     restart: always
 
   mysql-jobs:
@@ -25,6 +25,6 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /my-project/mysql/backup:/opt/mysql/backup
+      - /opt/mysql/backup:/opt/mysql/backup
     command: crond -f -d 8
     restart: always
