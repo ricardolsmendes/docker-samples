@@ -1,6 +1,6 @@
 # docker-samples
 
-A project with ready-to-use Docker images.
+A project with custom, ready-to-use Docker images.
 
 ## Reference guides
 
