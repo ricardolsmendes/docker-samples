@@ -16,8 +16,8 @@ services:
     restart: always
 
   mysql-jobs:
-    build: ./custom-images/alpine-with-jobs
-    container_name: my-project_mysql-jobs
+    build: ./alpine-periodic-backup
+    container_name: my-project_mysql-backup
     user: root
     environment:
       MYSQL_CONTAINER_NAME: my-project_mysql
