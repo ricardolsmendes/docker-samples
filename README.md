@@ -4,7 +4,7 @@ A project with custom & ready-to-use Docker images.
 
 ## MySQL/MariaDB
 
-1. __Alpine with scheduled backup__: minimal _MariaDB_ server with a daily backup schedule | _reference guide_: [MySQL/MariaDB with scheduled backups running in Docker] @ Medium.
+1. __Alpine with periodic backup__: minimal _MariaDB_ server with a daily backup schedule | _reference guide_: [MySQL/MariaDB with scheduled backups running in Docker] @ Medium.
 
 ## Nginx
 

@@ -12,8 +12,6 @@ MHOST=$MYSQL_CONTAINER_NAME
 MPASS="$MYSQL_ROOT_PASSWORD"
 MUSER="root"
 
-### See comments below ###
-### [ ! -d $BACKUP_FOLDER ] && mkdir -p $BACKUP_FOLDER || /bin/rm -f $BACKUP_FOLDER/* ###
 [ ! -d "$BACKUP_FOLDER" ] && mkdir -p "$BACKUP_FOLDER"
 
 FILE=$BACKUP_FOLDER/backup-$NOW.sql.gz
