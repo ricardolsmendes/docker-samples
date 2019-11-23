@@ -4,7 +4,7 @@ services:
 
   mysql:
     image: mariadb:10.2.16
-    container_name: my-project_mysql
+    container_name: server
     environment:
       MYSQL_DATABASE: my-database
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -15,11 +15,11 @@ services:
       - /opt/mysql/data:/var/lib/mysql
     restart: always
 
-  mysql-jobs:
-    build: ./alpine-periodic-backup
-    container_name: my-project_mysql-backup
+  periodic-backup:
+    build: ./periodic-backup
+    container_name: database-backup
     environment:
-      MYSQL_CONTAINER_NAME: my-project_mysql
+      MYSQL_CONTAINER_NAME: server
       MYSQL_DATABASE: my-database
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
