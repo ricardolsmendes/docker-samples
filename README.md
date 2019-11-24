@@ -16,9 +16,9 @@ stored in custom paths.
 
 ## Tomcat
 
-1. [__Backup access logs__][2]: _Alpine Linux_ that organizes Tomcat access logs into a year/month/day hierarchical
-folder structure.
+1. [__Access log backup__][2]: _Alpine Linux_ that organizes Tomcat access logs into a year/month/day hierarchical
+backup folders structure.
 
 [1]: https://medium.com/@ricardolsmendes/mysql-mariadb-with-scheduled-backup-jobs-running-in-docker-1956e9892e78
 
-[2]: ./tomcat/backup-access-logs
+[2]: ./tomcat/access-log-backup

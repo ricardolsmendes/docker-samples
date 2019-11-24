@@ -12,7 +12,7 @@ YESTERDAY_MONTH=${YESTERDAY:0:7}
 YESTERDAY_YEAR=${YESTERDAY:0:4}
 
 ### Yesterday's logs file name ###
-FILENAME=$(printf $LOGS_FILENAME_PATTERN $YESTERDAY)
+FILENAME=$(printf localhost_access_log.%s.txt $YESTERDAY)
 
 ### Yesterday's logs file backup folder ###
 BACKUP_FOLDER=$BASE_BACKUP_FOLDER/$YESTERDAY_YEAR/$YESTERDAY_MONTH
