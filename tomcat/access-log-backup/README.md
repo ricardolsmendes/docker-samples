@@ -73,6 +73,6 @@ per script execution. The destination folders are created automatically.
 
 - `/opt/tomcat/access-logs`: source folder, where Tomcat writes the access logs in the host system.
 
-- `/opt/tomcat/backuo/access-logs`: destination folder, where the structured backup resides.
+- `/opt/tomcat/backup/access-logs`: destination folder, where the structured backup resides.
 
 [1]: ./scripts/daily/backup-log
