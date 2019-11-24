@@ -21,4 +21,4 @@ folder structure.
 
 [1]: https://medium.com/@ricardolsmendes/mysql-mariadb-with-scheduled-backup-jobs-running-in-docker-1956e9892e78
 
-[2]: ./backup-access-logs
+[2]: ./tomcat/backup-access-logs
