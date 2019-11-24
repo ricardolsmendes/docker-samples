@@ -1,0 +1,24 @@
+#!/bin/sh
+
+### Source files folder ###
+SOURCE_FOLDER=/opt/tomcat/access-logs
+
+### Base local backups folder ###
+BASE_BACKUP_FOLDER=/opt/tomcat/backup/access-logs
+
+### Strings representing yesterday's date ###
+YESTERDAY=$(date --date '1 day ago' +'%Y-%m-%d')
+YESTERDAY_MONTH=${YESTERDAY:0:7}
+YESTERDAY_YEAR=${YESTERDAY:0:4}
+
+### Yesterday's logs file name ###
+FILENAME=$(printf $LOGS_FILENAME_PATTERN $YESTERDAY)
+
+### Yesterday's logs file backup folder ###
+BACKUP_FOLDER=$BASE_BACKUP_FOLDER/$YESTERDAY_YEAR/$YESTERDAY_MONTH
+
+### Create the backup folder if it does not exist ###
+[ ! -d $BACKUP_FOLDER ] && mkdir --parents $BACKUP_FOLDER
+
+### Copy the access logs file from source to backup folder ###
+cp --preserve=mode,ownership,timestamps $SOURCE_FOLDER/$FILENAME $BACKUP_FOLDER/$FILENAME
