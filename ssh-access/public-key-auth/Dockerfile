@@ -5,8 +5,8 @@ FROM ubuntu:16.04
 # https://docs.docker.com/engine/examples/running_ssh_service for reference.
 # --------------------------------------------------------------------------
 RUN apt-get update \
-    && apt-get install -y openssh-server
-RUN mkdir /var/run/sshd
+    && apt-get install -y openssh-server \
+    && mkdir -p /var/run/sshd
 
 EXPOSE 22
 

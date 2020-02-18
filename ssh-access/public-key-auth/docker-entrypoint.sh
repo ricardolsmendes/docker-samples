@@ -1,10 +1,13 @@
 #!/bin/sh
 
+# Create a folder to store user's SSH keys if it does not exist.
+USER_SSH_KEYS_FOLDER=~/.ssh
+[ ! -d $USER_SSH_KEYS_FOLDER ] && mkdir -p $USER_SSH_KEYS_FOLDER
+
 # Copy contents from the `SSH_PUBLIC_KEY` environment variable
-# to the `~/.ssh/authorized_keys` file.
+# to the `$USER_SSH_KEYS_FOLDER/authorized_keys` file.
 # The environment variable must be set when the container starts.
-mkdir ~/.ssh
-echo $SSH_PUBLIC_KEY > ~/.ssh/authorized_keys
+echo $SSH_PUBLIC_KEY > $USER_SSH_KEYS_FOLDER/authorized_keys
 
 # Clear the `SSH_PUBLIC_KEY` environment variable.
 unset SSH_PUBLIC_KEY
