@@ -5,7 +5,7 @@ FROM ubuntu:18.04
 # https://docs.docker.com/engine/examples/running_ssh_service for reference.
 # --------------------------------------------------------------------------
 RUN apt-get update \
-    && apt-get install -y jq openssh-server \
+    && apt-get install -y openssh-server \
     && mkdir -p /var/run/sshd
 
 EXPOSE 22
