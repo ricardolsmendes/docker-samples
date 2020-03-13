@@ -17,7 +17,7 @@ ssh-keygen
 
 3. Start a container providing it the public key as the `SSH_PUBLIC_KEY` environment variable:
 ```bash
-docker run -d -e SSH_PUBLIC_KEY=$(cat ~/.ssh/id_rsa.pub) --rm ssh-public-key-auth
+docker run -d -e SSH_PUBLIC_KEY="$(cat ~/.ssh/id_rsa.pub)" --rm ssh-public-key-auth
 ```
 
 4. Get container's IP address:
