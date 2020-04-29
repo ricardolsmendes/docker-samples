@@ -15,10 +15,10 @@ YESTERDAY_YEAR=${YESTERDAY:0:4}
 FILENAME=$(printf localhost_access_log.%s.txt $YESTERDAY)
 
 ### Yesterday's logs file backup folder ###
-BACKUP_FOLDER=$BASE_BACKUP_FOLDER/$YESTERDAY_YEAR/$YESTERDAY_MONTH
+BACKUP_FOLDER=${BASE_BACKUP_FOLDER}/${YESTERDAY_YEAR}/${YESTERDAY_MONTH}
 
 ### Create the backup folder if it does not exist ###
-[ ! -d $BACKUP_FOLDER ] && mkdir --parents $BACKUP_FOLDER
+[ ! -d "$BACKUP_FOLDER" ] && mkdir --parents $BACKUP_FOLDER
 
 ### Copy the access logs file from source to backup folder ###
-cp --preserve=mode,ownership,timestamps $SOURCE_FOLDER/$FILENAME $BACKUP_FOLDER/$FILENAME
+cp --preserve=mode,ownership,timestamps ${SOURCE_FOLDER}/${FILENAME} ${BACKUP_FOLDER}/${FILENAME}
