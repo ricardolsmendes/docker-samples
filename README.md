@@ -2,6 +2,9 @@
 
 Custom ready-to-use Docker images.
 
+[![license](https://img.shields.io/github/license/ricardolsmendes/docker-samples.svg)](https://github.com/ricardolsmendes/docker-samples/blob/master/LICENSE)
+[![issues](https://img.shields.io/github/issues/ricardolsmendes/docker-samples.svg)](https://github.com/ricardolsmendes/docker-samples/issues)
+
 ## Samples
 
 ### MySQL/MariaDB
